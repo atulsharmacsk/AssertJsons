@@ -24,6 +24,7 @@ public class JsonTest {
     public void demoTest1() {
         String expected = readJson("expected.json");
         String actual = readJson("actual.json");
+//        JSONAssert.assertEquals(expected, actual, true);
         JSONAssert.assertEquals(expected, actual, JSONCompareMode.STRICT);
     }
 
@@ -32,6 +33,25 @@ public class JsonTest {
     public void demoTest2() {
         String expected = readJson("expected.json");
         String actual = readJson("actual.json");
+//        JSONAssert.assertEquals(expected, actual, false);
         JSONAssert.assertEquals(expected, actual, JSONCompareMode.LENIENT);
+    }
+
+    @SneakyThrows
+    @Test
+    public void demoTest3() {
+        String expected = readJson("expected.json");
+        String actual = readJson("actual.json");
+//        JSONAssert.assertEquals(expected, actual, true);
+        JSONAssert.assertEquals(expected, actual, JSONCompareMode.NON_EXTENSIBLE);
+    }
+
+    @SneakyThrows
+    @Test
+    public void demoTest4() {
+        String expected = readJson("expected.json");
+        String actual = readJson("actual.json");
+//        JSONAssert.assertEquals(expected, actual, false);
+        JSONAssert.assertEquals(expected, actual, JSONCompareMode.STRICT_ORDER);
     }
 }
